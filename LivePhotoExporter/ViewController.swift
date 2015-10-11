@@ -40,7 +40,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
   }
 
   func createGifFromVideoUrl(url: NSURL) {
-    let regift = Regift(sourceFileURL: url, frameCount: 16, delayTime: 0.2).createGif()
+    let regift = Regift(sourceFileURL: url, frameCount: 25, delayTime: 0).createGif()
     if let dataUrl = regift {
       let data = NSData(contentsOfURL: dataUrl)!
 
@@ -79,16 +79,32 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     PHImageManager.defaultManager().requestLivePhotoForAsset(asset, targetSize: size, contentMode: PHImageContentMode.Default, options: nil) { (livePhoto, options) in
       if let livePhoto = livePhoto {
         self.livePhotoSelected(livePhoto)
+      } else {
+        self.alertNoLivePhoto()
       }
     }
   }
 
-  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-    if let url = info[UIImagePickerControllerReferenceURL] as? NSURL {
-      fetchImageFromURL(url)
+  func alertNoLivePhoto() {
+    let alertController = UIAlertController(title: "No Live Photo!", message: "Please, select an live-photo!", preferredStyle: .Alert)
+    let okAction = UIAlertAction(title: "OK", style: .Default) { action in
+      alertController.dismissViewControllerAnimated(true, completion: nil)
+      self.chooseImagePressed(self.view)
     }
+    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { action in
+      alertController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    alertController.addAction(okAction)
+    alertController.addAction(cancelAction)
+    presentViewController(alertController, animated: true, completion: nil)
+  }
 
-    picker.dismissViewControllerAnimated(true, completion: nil)
+  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    picker.dismissViewControllerAnimated(true) {
+      if let url = info[UIImagePickerControllerReferenceURL] as? NSURL {
+        self.fetchImageFromURL(url)
+      }
+    }
   }
 
   func imagePickerControllerDidCancel(picker: UIImagePickerController) {

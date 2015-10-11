@@ -10,7 +10,6 @@
 		C3C713991BCA7950000D7317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C713981BCA7950000D7317 /* AppDelegate.swift */; };
 		C3C7139B1BCA7950000D7317 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7139A1BCA7950000D7317 /* ViewController.swift */; };
 		C3C7139E1BCA7950000D7317 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3C7139C1BCA7950000D7317 /* Main.storyboard */; };
-		C3C713A11BCA7950000D7317 /* LivePhotoExporter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3C7139F1BCA7950000D7317 /* LivePhotoExporter.xcdatamodeld */; };
 		C3C713A31BCA7950000D7317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3C713A21BCA7950000D7317 /* Assets.xcassets */; };
 		C3C713A61BCA7950000D7317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3C713A41BCA7950000D7317 /* LaunchScreen.storyboard */; };
 		C3C713B11BCA7950000D7317 /* LivePhotoExporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C713B01BCA7950000D7317 /* LivePhotoExporterTests.swift */; };
@@ -42,7 +41,6 @@
 		C3C713981BCA7950000D7317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3C7139A1BCA7950000D7317 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C3C7139D1BCA7950000D7317 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C3C713A01BCA7950000D7317 /* LivePhotoExporter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LivePhotoExporter.xcdatamodel; sourceTree = "<group>"; };
 		C3C713A21BCA7950000D7317 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3C713A51BCA7950000D7317 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3C713A71BCA7950000D7317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				C3C713A21BCA7950000D7317 /* Assets.xcassets */,
 				C3C713A41BCA7950000D7317 /* LaunchScreen.storyboard */,
 				C3C713A71BCA7950000D7317 /* Info.plist */,
-				C3C7139F1BCA7950000D7317 /* LivePhotoExporter.xcdatamodeld */,
 			);
 			path = LivePhotoExporter;
 			sourceTree = "<group>";
@@ -223,6 +220,7 @@
 				TargetAttributes = {
 					C3C713941BCA7950000D7317 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = RSRVS8D9PW;
 					};
 					C3C713AB1BCA7950000D7317 = {
 						CreatedOnToolsVersion = 7.1;
@@ -334,7 +332,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3C713A11BCA7950000D7317 /* LivePhotoExporter.xcdatamodeld in Sources */,
 				C3C7139B1BCA7950000D7317 /* ViewController.swift in Sources */,
 				C3C713991BCA7950000D7317 /* AppDelegate.swift in Sources */,
 			);
@@ -477,10 +474,13 @@
 			baseConfigurationReference = E97FD4073224BDA21E02F648 /* Pods-LivePhotoExporter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LivePhotoExporter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.tomasharkema.LivePhotoExporter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -489,10 +489,13 @@
 			baseConfigurationReference = 29A2258DD67832525141EBA3 /* Pods-LivePhotoExporter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LivePhotoExporter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.tomasharkema.LivePhotoExporter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -584,19 +587,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		C3C7139F1BCA7950000D7317 /* LivePhotoExporter.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C3C713A01BCA7950000D7317 /* LivePhotoExporter.xcdatamodel */,
-			);
-			currentVersion = C3C713A01BCA7950000D7317 /* LivePhotoExporter.xcdatamodel */;
-			path = LivePhotoExporter.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = C3C7138D1BCA7950000D7317 /* Project object */;
 }
