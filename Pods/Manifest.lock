@@ -1,0 +1,10 @@
+PODS:
+  - Regift (1.0.1)
+
+DEPENDENCIES:
+  - Regift
+
+SPEC CHECKSUMS:
+  Regift: d0b88698ab5348be1baca88a84b8cb074668c378
+
+COCOAPODS: 0.38.2

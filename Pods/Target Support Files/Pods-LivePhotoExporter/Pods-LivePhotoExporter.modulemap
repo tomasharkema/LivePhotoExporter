@@ -1,0 +1,6 @@
+framework module Pods_LivePhotoExporter {
+  umbrella header "Pods-LivePhotoExporter-umbrella.h"
+
+  export *
+  module * { export * }
+}
